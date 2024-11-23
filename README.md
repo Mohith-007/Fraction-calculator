@@ -1,4 +1,4 @@
-# Fraction_colculator
+# Fraction_calculator
 
 ## Overview
 This project is a simple web-based fraction calculator that allows users to input two fractions and compute their sum. The calculator also displays the steps involved in calculating the sum.
