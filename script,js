@@ -1,0 +1,26 @@
+// script.js
+function calculateFractions() {
+    const frac1 = document.getElementById('fraction1').value;
+    const frac2 = document.getElementById('fraction2').value;
+
+    try {
+        const result = evaluate(`${frac1} + ${frac2}`);
+        document.getElementById('result').innerText = `Result: ${result}`;
+
+        const steps = `To solve ${frac1} + ${frac2}, we first find a common denominator, then add the numerators.`;
+        document.getElementById('steps').innerText = steps;
+    } catch (error) {
+        document.getElementById('result').innerText = 'Invalid input';
+        document.getElementById('steps').innerText = '';
+    }
+}
+
+function evaluate(expression) {
+    const [num1, den1] = expression.split('+')[0].trim().split('/');
+    const [num2, den2] = expression.split('+')[1].trim().split('/');
+    const commonDenominator = den1 * den2;
+    const numerator1 = num1 * den2;
+    const numerator2 = num2 * den1;
+    const sumNumerator = numerator1 + numerator2;
+    return `${sumNumerator}/${commonDenominator}`;
+}
