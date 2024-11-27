@@ -3,37 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <title>Fraction Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the home section of the website.</p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>This section contains information about the website.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Contact us at: <a href="mailto:example@example.com">example@example.com</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your Website Name</p>
-    </footer>
+    <div class="container">
+        <h1>Fraction Calculator</h1>
+        <form id="fractionForm">
+            <div class="input-section">
+                <label for="numerator1">Numerator 1:</label>
+                <input type="number" id="numerator1" required>
+                <label for="denominator1">Denominator 1:</label>
+                <input type="number" id="denominator1" required>
+            </div>
+            <div class="input-section">
+                <label for="numerator2">Numerator 2:</label>
+                <input type="number" id="numerator2" required>
+                <label for="denominator2">Denominator 2:</label>
+                <input type="number" id="denominator2" required>
+            </div>
+            <div class="operation-section">
+                <label for="operation">Operation:</label>
+                <select id="operation">
+                    <option value="add">Add</option>
+                    <option value="subtract">Subtract</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="divide">Divide</option>
+                </select>
+            </div>
+            <div class="format-section">
+                <label>Result Format:</label>
+                <input type="radio" id="mixed" name="format" value="mixed" checked>
+                <label for="mixed">Mixed Number</label>
+                <input type="radio" id="improper" name="format" value="improper">
+                <label for="improper">Improper Fraction</label>
+            </div>
+            <button type="button" onclick="calculate()">Calculate</button>
+            <button type="reset">Clear</button>
+        </form>
+        <div id="result"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
